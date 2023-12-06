@@ -1,3 +1,4 @@
+package ProgAdaMenu;
 class ParkingLot {
     private Kendaraan[] vehicles;
     private int capacity;

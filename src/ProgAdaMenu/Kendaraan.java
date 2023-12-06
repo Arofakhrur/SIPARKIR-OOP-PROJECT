@@ -1,3 +1,4 @@
+package ProgAdaMenu;
 abstract class Kendaraan {
     private String nomorPlat;
     protected String merk;

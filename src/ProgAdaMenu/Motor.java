@@ -1,3 +1,4 @@
+package ProgAdaMenu;
 class Motor extends Kendaraan {
 
     public Motor(String nomorPlat, String merk, String warna, int kapasitasMesin) {

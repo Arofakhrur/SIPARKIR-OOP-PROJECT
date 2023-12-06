@@ -1,3 +1,4 @@
+package ProgAdaMenu;
 class Mobil extends Kendaraan {
 
     public Mobil(String nomorPlat, String merk, String warna, int kapasitasMesin) {
