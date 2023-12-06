@@ -1,4 +1,9 @@
 package ProgAdaMenu;
+
+//Parent Class-Kendaraan
+// Kelas Kendaraan adalah kelas abstrak yang menjadi induk dari kelas Mobil dan Motor
+
+//Method-method pada kelas Kendaraan seperti getNomorPlat(), getMerk(), getWarna(), dan getKapasitasMesin() berfungsi sebagai accessor (getter) untuk mendapatkan nilai atribut dari luar kelas.
 abstract class Kendaraan {
     private String nomorPlat;
     protected String merk;
@@ -34,6 +39,7 @@ abstract class Kendaraan {
 
     @Override
     public String toString() {
-        return "\nNomor plat: " + nomorPlat + "\nmerk: " + merk + "\nwarna: " + warna + "\nkapasitas Mesin: " + kapasitasMesin;
+        return "\nNomor plat: " + nomorPlat + "\nmerk: " + merk + "\nwarna: " + warna + "\nkapasitas Mesin: "
+                + kapasitasMesin;
     }
 }

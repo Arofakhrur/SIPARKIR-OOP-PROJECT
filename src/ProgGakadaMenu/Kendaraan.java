@@ -1,10 +1,18 @@
 package ProgGakadaMenu;
 
+// Parent Class - Kendaraan
+// Kelas Kendaraan adalah kelas abstrak yang menjadi induk dari kelas Mobil dan Motor
 abstract class Kendaraan {
     private String nomorPlat;
+    protected String merk;
+    protected String warna;
+    protected int kapasitasMesin;
 
-    public Kendaraan(String nomorPlat) {
+    public Kendaraan(String nomorPlat, String merk, String warna, int kapasitasMesin) {
         this.nomorPlat = nomorPlat;
+        this.merk = merk;
+        this.warna = warna;
+        this.kapasitasMesin = kapasitasMesin;
     }
 
     public abstract void masuk();
@@ -15,32 +23,6 @@ abstract class Kendaraan {
         return nomorPlat;
     }
 
-    @Override
-    public String toString() {
-        return "\nNomor plat: " + nomorPlat;
-    }
-}
-
-class Mobil extends Kendaraan {
-    protected String merk;
-    protected String warna;
-
-    public Mobil(String nomorPlat, String merk, String warna) {
-        super(nomorPlat);
-        this.merk = merk;
-        this.warna = warna;
-    }
-
-    @Override
-    public void masuk() {
-        System.out.println("Mobil dengan nomor plat " + getNomorPlat() + " masuk ke tempat parkir.");
-    }
-
-    @Override
-    public void keluar() {
-        System.out.println("Mobil dengan nomor plat " + getNomorPlat() + " keluar dari tempat parkir.");
-    }
-
     public String getMerk() {
         return merk;
     }
@@ -49,8 +31,14 @@ class Mobil extends Kendaraan {
         return warna;
     }
 
+    public int getKapasitasMesin() {
+        return kapasitasMesin;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "\nMerk: " + merk + "\nWarna: " + warna;
+        return "\nNomor plat: " + nomorPlat + "\nmerk: " + merk +
+                "\nwarna: " + warna +
+                "\nkapasitas Mesin: " + kapasitasMesin;
     }
 }

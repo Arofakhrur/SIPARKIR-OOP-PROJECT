@@ -1,6 +1,9 @@
 package ProgAdaMenu;
+
+// Kelas Mobil adalah subkelas dari Kendaraan.
 class Mobil extends Kendaraan {
 
+    
     public Mobil(String nomorPlat, String merk, String warna, int kapasitasMesin) {
         super(nomorPlat, merk, warna, kapasitasMesin);
     }
@@ -27,8 +30,4 @@ class Mobil extends Kendaraan {
         return kapasitasMesin;
     }
 
-    // @Override
-    // public String toString() {
-    //     return super.toString() + "\nMerk: " + merk + "\nWarna: " + warna;
-    // }
 }

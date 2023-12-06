@@ -1,5 +1,6 @@
 package ProgGakadaMenu;
 
+// Kelas ini merepresentasikan tempat parkir dengan batasan kapasitas tertentu.
 class ParkingLot {
     private Kendaraan[] vehicles;
     private int capacity;
@@ -11,6 +12,7 @@ class ParkingLot {
         this.occupiedSlots = 0;
     }
 
+    // Fungsi untuk menambah data kendaraan
     public void addVehicle(Kendaraan vehicle) {
         if (occupiedSlots == capacity) {
             System.out.println("\nTempat parkir penuh.");
@@ -18,9 +20,12 @@ class ParkingLot {
         }
 
         vehicles[occupiedSlots++] = vehicle;
-        System.out.println("\nKendaraan " + vehicle + " \nditambahkan ke tempat parkir.");
+        System.out.println("┌───────────────────────────────────────────────────────────┐");
+        System.out.println("Kendaraan " + vehicle + " \nditambahkan ke tempat parkir.");
+        System.out.println("└───────────────────────────────────────────────────────────┘");
     }
 
+    // Fungsi untuk menghapus data kendaraan
     public void removeVehicle(String licensePlate) {
         for (int i = 0; i < occupiedSlots; i++) {
             if (vehicles[i].getNomorPlat().equals(licensePlate)) {
@@ -42,6 +47,7 @@ class ParkingLot {
         }
     }
 
+    // Fungsi untuk menampilkan data kendaraan
     public void showVehicles() {
         if (occupiedSlots == 0) {
             System.out.println("\nTempat parkir kosong.");

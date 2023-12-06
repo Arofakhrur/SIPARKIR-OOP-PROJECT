@@ -1,11 +1,9 @@
 package ProgGakadaMenu;
 
+// Kelas Motor adalah subkelas dari Kendaraan.
 class Motor extends Kendaraan {
-    protected int kapasitasMesin;
-
-    public Motor(String nomorPlat, int kapasitasMesin) {
-        super(nomorPlat);
-        this.kapasitasMesin = kapasitasMesin;
+    public Motor(String nomorPlat,String merk, String warna, int kapasitasMesin) {
+        super(nomorPlat, merk, warna, kapasitasMesin);
     }
 
     @Override

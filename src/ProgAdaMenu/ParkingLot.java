@@ -1,4 +1,7 @@
 package ProgAdaMenu;
+
+// Kelas ini merepresentasikan tempat parkir dengan batasan kapasitas tertentu.
+// array vehicles yang menyimpan objek kendaraan yang terparkir.
 class ParkingLot {
     private Kendaraan[] vehicles;
     private int capacity;
@@ -10,6 +13,7 @@ class ParkingLot {
         this.occupiedSlots = 0;
     }
 
+    // Metode addVehicle() untuk menambahkan kendaraan ke tempat parkir.
     public void addVehicle(Kendaraan vehicle) {
         if (occupiedSlots == capacity) {
             System.out.println("\nTempat parkir penuh.");
@@ -19,6 +23,7 @@ class ParkingLot {
         System.out.println("\nKendaraan " + vehicle + " \nditambahkan ke tempat parkir.");
     }
 
+    // Metode removeVehicle() untuk menghapus kendaraan berdasarkan nomor plat.
     public void removeVehicle(String licensePlate) {
         for (int i = 0; i < occupiedSlots; i++) {
             if (vehicles[i].getNomorPlat().equals(licensePlate)) {

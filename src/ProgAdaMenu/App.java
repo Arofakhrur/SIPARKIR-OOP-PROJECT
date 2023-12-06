@@ -1,9 +1,12 @@
 package ProgAdaMenu;
-import java.util.Scanner;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class App {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ParkingLot parkiran = new ParkingLot(5);
 
         boolean exit = false;
@@ -15,16 +18,15 @@ public class App {
             System.out.println("4. Keluar");
 
             System.out.print("Pilih menu (1-4): ");
-            int pilihan = scanner.nextInt();
-            scanner.nextLine(); // Handling newline
+            int pilihan = Integer.parseInt(reader.readLine());
 
             switch (pilihan) {
                 case 1:
-                    tambahKendaraan(scanner, parkiran);
+                    tambahKendaraan(reader, parkiran);
                     break;
                 case 2:
                     System.out.print("Masukkan nomor plat kendaraan yang ingin dihapus: ");
-                    String nomorPlat = scanner.nextLine();
+                    String nomorPlat = reader.readLine();
                     parkiran.removeVehicle(nomorPlat);
                     break;
                 case 3:
@@ -38,39 +40,35 @@ public class App {
                     break;
             }
         }
-        scanner.close();
+        reader.close();
     }
 
-    public static void tambahKendaraan(Scanner scanner, ParkingLot parkiran) {
+    public static void tambahKendaraan(BufferedReader reader, ParkingLot parkiran) throws IOException {
         System.out.print("Jenis kendaraan (1. Mobil / 2. Motor): ");
-        int jenis = scanner.nextInt();
-        scanner.nextLine(); // Handling newline
+        int jenis = Integer.parseInt(reader.readLine());
 
         System.out.print("Nomor plat: ");
-        String nomorPlat = scanner.nextLine();
+        String nomorPlat = reader.readLine();
 
         System.out.print("Merk: ");
-        String merk = scanner.nextLine();
+        String merk = reader.readLine();
 
         System.out.print("Warna: ");
-        String warna = scanner.nextLine();
+        String warna = reader.readLine();
 
-        if (jenis == 1) {
+        if (jenis == 1 || jenis == 2) {
             System.out.print("Kapasitas mesin: ");
-            int kapasitasMesin = scanner.nextInt();
-            scanner.nextLine(); // Handling newline
+            int kapasitasMesin = Integer.parseInt(reader.readLine());
 
-            Kendaraan mobil = new Mobil(nomorPlat, merk, warna, kapasitasMesin);
-            parkiran.addVehicle(mobil);
-        } else if (jenis == 2) {
-            System.out.print("Kapasitas mesin: ");
-            int kapasitasMesin = scanner.nextInt();
-            scanner.nextLine(); // Handling newline
-
-            Kendaraan motor = new Motor(nomorPlat, merk, warna, kapasitasMesin);
-            parkiran.addVehicle(motor);
+            if (jenis == 1) {
+                Kendaraan mobil = new Mobil(nomorPlat, merk, warna, kapasitasMesin);
+                parkiran.addVehicle(mobil);
+            } else {
+                Kendaraan motor = new Motor(nomorPlat, merk, warna, kapasitasMesin);
+                parkiran.addVehicle(motor);
+            }
         } else {
-            System.out.println("Pilihan tidak valid.");
+            System.out.println("Pilihan salah.");
         }
     }
 }
