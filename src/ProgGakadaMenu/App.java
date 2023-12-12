@@ -2,10 +2,10 @@ package ProgGakadaMenu;
 
 public class App {
     public static void main(String[] args) {
-        // Membuat objek parkiran dengan kapasitas 5
+        // Membuat objek parkiran dengan 5 slot kapasitas 
         ParkingLot parkiran = new ParkingLot(5);
 
-        // Membuat beberapa kendaraan
+        // Constructor Membuat beberapa kendaraan
         Kendaraan mobil1 = new Mobil("B 1234 CD", "Toyota", "Merah", 2500);
         Kendaraan mobil2 = new Mobil("B 5678 FG", "Honda", "Biru", 3000);
 

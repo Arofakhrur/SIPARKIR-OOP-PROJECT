@@ -5,11 +5,13 @@ package ProgAdaMenu;
 
 //Method-method pada kelas Kendaraan seperti getNomorPlat(), getMerk(), getWarna(), dan getKapasitasMesin() berfungsi sebagai accessor (getter) untuk mendapatkan nilai atribut dari luar kelas.
 abstract class Kendaraan {
+    // Atribut-atribut yang digunakan oleh kelas turunan
     private String nomorPlat;
     protected String merk;
     protected String warna;
     protected int kapasitasMesin;
 
+    // Konstruktor untuk inisialisasi nilai atribut
     public Kendaraan(String nomorPlat, String merk, String warna, int kapasitasMesin) {
         this.nomorPlat = nomorPlat;
         this.merk = merk;
@@ -17,10 +19,12 @@ abstract class Kendaraan {
         this.kapasitasMesin = kapasitasMesin;
     }
 
+    // Method abstrak yang akan diimplementasikan di kelas turunan
     public abstract void masuk();
 
     public abstract void keluar();
 
+    // Getter untuk mendapatkan nilai atribut dari luar kelas
     public String getNomorPlat() {
         return nomorPlat;
     }
@@ -37,6 +41,7 @@ abstract class Kendaraan {
         return kapasitasMesin;
     }
 
+    // Representasi string dari objek Kendaraan
     @Override
     public String toString() {
         return "\nNomor plat: " + nomorPlat + "\nmerk: " + merk + "\nwarna: " + warna + "\nkapasitas Mesin: "

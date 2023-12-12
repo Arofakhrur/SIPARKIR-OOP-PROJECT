@@ -1,39 +1,39 @@
-package ProgGakadaMenu;
+package ProgGakadaMenu; // Mendefinisikan paket (package) tempat kelas ini berada
 
-// Kelas ini merepresentasikan tempat parkir dengan batasan kapasitas tertentu.
 class ParkingLot {
-    private Kendaraan[] vehicles;
-    private int capacity;
-    private int occupiedSlots;
+    private Kendaraan[] kendaraan; // Array untuk menyimpan kendaraan yang terparkir
+    private int capacity; // Kapasitas total tempat parkir
+    private int occupiedSlots; // Slot yang sudah terisi
 
+    // Constructor untuk membuat objek ParkingLot dengan kapasitas tertentu
     public ParkingLot(int capacity) {
-        this.vehicles = new Kendaraan[capacity];
-        this.capacity = capacity;
-        this.occupiedSlots = 0;
+        this.kendaraan = new Kendaraan[capacity]; // Inisialisasi array kendaraan
+        this.capacity = capacity; // Set kapasitas tempat parkir
+        this.occupiedSlots = 0; // Awalnya belum ada slot yang terisi
     }
 
-    // Fungsi untuk menambah data kendaraan
+    // Fungsi untuk menambahkan kendaraan ke tempat parkir
     public void addVehicle(Kendaraan vehicle) {
         if (occupiedSlots == capacity) {
             System.out.println("\nTempat parkir penuh.");
             return;
         }
 
-        vehicles[occupiedSlots++] = vehicle;
+        kendaraan[occupiedSlots++] = vehicle; // Tambahkan kendaraan ke array
         System.out.println("┌───────────────────────────────────────────────────────────┐");
         System.out.println("Kendaraan " + vehicle + " \nditambahkan ke tempat parkir.");
         System.out.println("└───────────────────────────────────────────────────────────┘");
     }
 
-    // Fungsi untuk menghapus data kendaraan
+    // Fungsi untuk menghapus kendaraan dari tempat parkir berdasarkan nomor plat
     public void removeVehicle(String licensePlate) {
         for (int i = 0; i < occupiedSlots; i++) {
-            if (vehicles[i].getNomorPlat().equals(licensePlate)) {
-                vehicles[i] = null;
+            if (kendaraan[i].getNomorPlat().equals(licensePlate)) {
+                kendaraan[i] = null; // Hapus kendaraan dari slot
                 occupiedSlots--;
 
                 for (int j = i; j < occupiedSlots; j++) {
-                    vehicles[j] = vehicles[j + 1];
+                    kendaraan[j] = kendaraan[j + 1]; // Geser kendaraan ke posisi yang tepat setelah penghapusan
                 }
 
                 break;
@@ -47,7 +47,7 @@ class ParkingLot {
         }
     }
 
-    // Fungsi untuk menampilkan data kendaraan
+    // Fungsi untuk menampilkan kendaraan yang terparkir
     public void showVehicles() {
         if (occupiedSlots == 0) {
             System.out.println("\nTempat parkir kosong.");
@@ -55,7 +55,7 @@ class ParkingLot {
             System.out.println("\nKendaraan yang terparkir:");
 
             for (int i = 0; i < occupiedSlots; i++) {
-                System.out.println(vehicles[i]);
+                System.out.println(kendaraan[i]); // Tampilkan informasi kendaraan
             }
         }
     }
