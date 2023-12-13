@@ -4,8 +4,8 @@ package ProgAdaMenu;
 // array vehicles yang menyimpan objek kendaraan yang terparkir.
 class ParkingLot {
     private Kendaraan[] vehicles; // Array untuk menyimpan kendaraan yang terparkir
-    private int capacity; // Kapasitas maksimum tempat parkir
-    private int occupiedSlots; // Jumlah slot terisi saat ini
+    protected int capacity; // Kapasitas maksimum tempat parkir
+    protected int occupiedSlots; // Jumlah slot terisi saat ini
 
     // Konstruktor untuk inisialisasi objek ParkingLot dengan kapasitas tertentu
     public ParkingLot(int capacity) {

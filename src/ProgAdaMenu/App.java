@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 public class App {
     // Method utama main yang melemparkan IOException
     public static void main(String[] args) throws IOException {
+        
         // Membuat objek BufferedReader untuk input
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -62,7 +63,7 @@ public class App {
                 System.out.println("Masukkan tidak valid. Harap masukkan angka (1-4).");
             }
         }
-        // Menutup objek BufferedReader setelah pengguna selesai menggunakan program
+        // Menutup objek BufferedReader setelah selesai menggunakan program
         reader.close();
     }
 
@@ -81,8 +82,7 @@ public class App {
         System.out.print("Warna: ");
         String warna = reader.readLine();
 
-        // Memeriksa jenis kendaraan yang dimasukkan dan menambahkan sesuai dengan
-        // jenisnya
+        // Memeriksa jenis kendaraan yang dimasukkan dan menambahkan data kendaraan sesuai dengan jenisnya
         if (jenis == 1 || jenis == 2) {
             System.out.print("Kapasitas mesin: ");
             int kapasitasMesin = Integer.parseInt(reader.readLine());
